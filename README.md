@@ -6,6 +6,7 @@ This project focuses on clustering products based on their titles and assigning 
 - [Overview](#overview)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Pipeline](#pipeline)
 - [Project Details](#project-details)
 - [Results](#results)
 - [Contributing](#contributing)
@@ -38,7 +39,24 @@ pip install -r requirements.txt
     python topic_assignment.py --input data/clusters.pkl --output data/topics.csv
     ```
 
+## Pipeline
+![TiktokAccountPipeline](https://github.com/QuangNguyen2910/ProductTitleClustering/assets/127973111/168205c7-9b17-4ecc-b1bd-a6a2a28b0db5)
+### Pipeline details
+#### Get Images
+![1](https://github.com/QuangNguyen2910/ProductTitleClustering/assets/127973111/4fac5859-9232-43c1-9002-861875f9d852)
+#### Choosing and Cropping Images
+![2](https://github.com/QuangNguyen2910/ProductTitleClustering/assets/127973111/d28117cf-6c98-4814-a9d7-62b37b924af3)
+#### Output
+![output](https://github.com/QuangNguyen2910/ProductTitleClustering/assets/127973111/1579e964-310b-4a1b-a532-b521409ece01)
+
+
 ## Project Details
+### Process overview
+- This project aims to cluster products based on their titles and assign meaningful topics to each cluster. Initially, the project utilized BERT embeddings with PCA and t-SNE for dimensionality reduction and DBSCAN for clustering. However, this approach resulted in noisy and poorly defined clusters. 
+
+- To improve the results, the project shifted to using SBERT for embeddings, which are better aligned for Retrieval-Augmented Generation (RAG) systems often employed in economic chatbots. For dimensionality reduction, UMAP was used due to its ability to preserve both global and local data structures, outperforming t-SNE. HDBSCAN was chosen for clustering due to its robustness in handling noise and detecting clusters of varying densities.
+
+- Llama-3-8b was used for topic assignment, with prompt engineering ensuring that clusters with similar concepts received the same topic. The result is a more coherent and accurate clustering and topic assignment process.
 ### Data Preprocessing
 - Tokenization and cleaning of product titles.
 - Embedding using SBERT for alignment with RAG systems often used in economic chatbots.
@@ -59,5 +77,4 @@ The project demonstrates improved clustering performance and topic coherence usi
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or additions.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
+This project is licensed under the MIT License.
