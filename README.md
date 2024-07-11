@@ -6,7 +6,6 @@ This project focuses on clustering products based on their titles and assigning 
 - [Overview](#overview)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Pipeline](#pipeline)
 - [Project Details](#project-details)
 - [Results](#results)
 - [Contributing](#contributing)
@@ -38,17 +37,6 @@ pip install -r requirements.txt
     ```bash
     python topic_assignment.py --input data/clusters.pkl --output data/topics.csv
     ```
-
-## Pipeline
-![TiktokAccountPipeline](https://github.com/QuangNguyen2910/ProductTitleClustering/assets/127973111/168205c7-9b17-4ecc-b1bd-a6a2a28b0db5)
-### Pipeline details
-#### Get Images
-![1](https://github.com/QuangNguyen2910/ProductTitleClustering/assets/127973111/4fac5859-9232-43c1-9002-861875f9d852)
-#### Choosing and Cropping Images
-![2](https://github.com/QuangNguyen2910/ProductTitleClustering/assets/127973111/d28117cf-6c98-4814-a9d7-62b37b924af3)
-#### Output
-![output](https://github.com/QuangNguyen2910/ProductTitleClustering/assets/127973111/1579e964-310b-4a1b-a532-b521409ece01)
-
 
 ## Project Details
 ### Process overview
